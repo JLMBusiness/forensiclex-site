@@ -95,9 +95,9 @@ nav a:hover, nav a.active, .header__link:hover, .header__link--active { color: #
 .page-services { background-image: url('/patterns/bg-servicios.svg'); }
 .page-noticias { min-height: 70vh; background-image: url('/patterns/bg-noticias.svg'); color: #fff; }
 .page-contacto { background-image: url('/patterns/bg-contacto.svg'); color: #fff; }
-.page-inicio h2, .page-inicio p, .page-noticias h1, .page-noticias p, .page-contacto h1, .page-contacto p { color: #fff; }
-.page-nosotros > .container > h1, .page-nosotros > .container > p { color: #fff; }
-.page-contacto .section__description, .page-contacto .label { color: #fff; }
+.page-inicio h2, .page-inicio p, .page-noticias h1, .page-noticias p, .page-contacto h1, .page-contacto p { color: var(--color-text); }
+.page-nosotros > .container > h1, .page-nosotros > .container > p { color: var(--color-text); }
+.page-contacto .section__description, .page-contacto .label { color: var(--color-text); }
 .page-contacto .input, .page-contacto .textarea { background: rgba(255, 255, 255, 0.96); }
 .intro-text, .service-intro { max-width: 700px; margin-bottom: 3rem; font-size: var(--font-size-lg); }
 .about-grid, .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
