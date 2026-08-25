@@ -6,9 +6,18 @@ const navbar = document.getElementById('navbar');
 
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
-        navbar.classList.toggle('active');
+        const isOpen = navbar.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
 }
+
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+    }
+});
 
 // Cerrar menú al hacer clic en un enlace
 document.querySelectorAll('nav a').forEach(link => {

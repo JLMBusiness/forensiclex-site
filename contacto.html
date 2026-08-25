@@ -11,7 +11,7 @@
     <header>
         <div class="header-content">
             <h1><a href="index.html" class="brand-link">ForensicLex</a></h1>
-            <button id="menu-toggle" class="menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
         <nav id="navbar">
             <a href="nosotros.html">Nosotros</a>
@@ -21,15 +21,18 @@
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Contacto</h2>
-            <form id="contacto-form" class="contacto-form">
+        <section class="page-section">
+            <div class="container">
+                <h1>Contacto</h1>
+                <p>Cuéntanos qué necesitas investigar, proteger o documentar.</p>
+                <form id="contacto-form" class="contacto-form">
                 <div class="form-group"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" required></div>
                 <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
                 <div class="form-group"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" rows="5" required></textarea></div>
                 <button type="submit" class="btn-primary">Enviar mensaje</button>
                 <div id="contacto-resultado" class="resultado"></div>
-            </form>
+                </form>
+            </div>
         </section>
     </main>
     <footer><p>&copy; 2026 ForensicLex. Todos los derechos reservados.</p></footer>
