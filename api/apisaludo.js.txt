@@ -1,0 +1,19 @@
+export default function handler(req, res) {
+    const hora = new Date().getHours();
+    
+    let saludo;
+    if (hora < 12) {
+        saludo = 'Buenos días';
+    } else if (hora < 20) {
+        saludo = 'Buenas tardes';
+    } else {
+        saludo = 'Buenas noches';
+    }
+
+    return res.status(200).json({
+        ok: true,
+        saludo: saludo,
+        hora: `${hora}:${String(new Date().getMinutes()).padStart(2, '0')}`,
+        servidor: 'Vercel Serverless'
+    });
+}
