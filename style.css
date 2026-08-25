@@ -98,6 +98,62 @@ section {
     padding: 6rem 0;
 }
 
+.about-section {
+    background: var(--gris-calido);
+}
+
+.about-section h1 {
+    color: var(--verde-oscuro);
+    margin-bottom: 1.5rem;
+}
+
+.intro-text {
+    max-width: 760px;
+    margin-bottom: 3rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.about-card,
+.mission-section {
+    background: var(--crema);
+    padding: 2rem;
+    border: 1px solid var(--arena);
+    border-radius: var(--radio-suave);
+    box-shadow: var(--sombra-suave);
+}
+
+.about-card h3,
+.mission-section h2 {
+    color: var(--verde-oscuro);
+    margin-bottom: 1rem;
+}
+
+.mission-section {
+    margin-top: 2rem;
+    border-left: 4px solid var(--verde-primario);
+}
+
+.credentials-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 2.5rem 0;
+    padding-left: 1.25rem;
+}
+
+.cta-section {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.cta-section p {
+    margin-bottom: 1.5rem;
+}
+
 /* ===== HEADER ===== */
 header {
     position: sticky;
