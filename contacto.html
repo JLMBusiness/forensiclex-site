@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | ForensicLex</title>
+    <meta name="description" content="Contacta con ForensicLex.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>ForensicLex</h1>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+        </div>
+        <nav id="navbar">
+            <a href="nosotros.html">Nosotros</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Contacto</h2>
+            <form id="contacto-form" class="contacto-form">
+                <div class="form-group"><label for="nombre">Nombre *</label><input type="text" id="nombre" name="nombre" required></div>
+                <div class="form-group"><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
+                <div class="form-group"><label for="mensaje">Mensaje *</label><textarea id="mensaje" name="mensaje" rows="5" required></textarea></div>
+                <button type="submit" class="btn-primary">Enviar mensaje</button>
+                <div id="contacto-resultado" class="resultado"></div>
+            </form>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 ForensicLex. Todos los derechos reservados.</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
