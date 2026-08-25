@@ -73,10 +73,10 @@ nav a:hover, nav a.active, .header__link:hover, .header__link--active { color: v
 .hero__panel-item { display: flex; justify-content: space-between; gap: var(--space-md); color: var(--color-text-muted); font-size: var(--font-size-sm); }
 
 /* Sections and cards */
-.section { padding: var(--space-xl) 0; border-top: 1px solid var(--color-border); }
-.section__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-lg); }
-.section__title { font-size: var(--font-size-xl); }
-.section__description { max-width: 26rem; font-size: var(--font-size-sm); }
+.section { padding: 2.5rem 0; border-top: 1px solid #E3E3E6; }
+.section__header { display: flex; justify-content: space-between; align-items: flex-end; }
+.section__title { font-size: 1.75rem; letter-spacing: -0.02em; }
+.section__description { font-size: 0.875rem; color: #6A6A6C; max-width: 26rem; }
 .about-section, .services-section { background: var(--color-bg-alt); }
 .intro-text, .service-intro { max-width: 700px; margin-bottom: 3rem; font-size: var(--font-size-lg); }
 .about-grid, .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
