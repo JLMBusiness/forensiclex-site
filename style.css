@@ -80,12 +80,14 @@ nav a:hover, nav a.active, .header__link:hover, .header__link--active { color: v
 .about-section, .services-section { background: var(--color-bg-alt); }
 .intro-text, .service-intro { max-width: 700px; margin-bottom: 3rem; font-size: var(--font-size-lg); }
 .about-grid, .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
-.about-card, .card, .service-card { padding: var(--space-lg); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); box-shadow: var(--shadow-subtle); transition: transform var(--transition-fast), box-shadow var(--transition-normal), border-color var(--transition-fast); }
-.about-card:hover, .card:hover, .service-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); border-color: var(--color-accent-soft); }
+.about-card, .service-card { padding: var(--space-lg); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg); box-shadow: var(--shadow-subtle); transition: transform var(--transition-fast), box-shadow var(--transition-normal), border-color var(--transition-fast); }
+.about-card:hover, .service-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); border-color: var(--color-accent-soft); }
+.card { background: #F4F4F6; padding: 1.5rem; border-radius: 12px; border: 1px solid transparent; transition: 250ms ease-out; }
+.card:hover { background: #fff; border-color: rgba(31, 75, 153, 0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
 .about-card h3, .card h3 { color: var(--color-text); }
-.card__label { margin-bottom: var(--space-sm); color: var(--color-text-muted); font-size: var(--font-size-xs); letter-spacing: 0.12em; text-transform: uppercase; }
-.card__title { margin-bottom: var(--space-sm); font-size: var(--font-size-md); }
-.card__text { font-size: var(--font-size-sm); }
+.card__label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: #6A6A6C; }
+.card__title { font-size: 1.125rem; margin-top: 0.5rem; }
+.card__text { font-size: 0.875rem; color: #6A6A6C; }
 .mission-section { display: grid; grid-template-columns: 0.4fr 1fr; gap: var(--space-xl); margin-top: var(--space-lg); padding: var(--space-lg); border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); background: var(--color-bg); }
 .mission-section h2 { color: var(--color-accent); }
 .credentials-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin: var(--space-xl) 0 0; padding: var(--space-lg) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); list-style: none; color: var(--color-text-muted); }
