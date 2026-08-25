@@ -1,0 +1,38 @@
+export default function handler(req, res) {
+    // Solo permitir método POST
+    if (req.method !== 'POST') {
+        return res.status(405).json({ 
+            ok: false, 
+            mensaje: 'Método no permitido' 
+        });
+    }
+
+    // Obtener los datos del formulario
+    const { nombre, email, mensaje } = req.body;
+
+    // Validar que lleguen los datos
+    if (!nombre || !email || !mensaje) {
+        return res.status(400).json({ 
+            ok: false, 
+            mensaje: 'Faltan campos obligatorios' 
+        });
+    }
+
+    // Validar email básico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ 
+            ok: false, 
+            mensaje: 'El email no es válido' 
+        });
+    }
+
+    // Aquí podrías: enviar email, guardar en base de datos, etc.
+    // Por ahora, devolvemos éxito
+    console.log(`📩 Nuevo mensaje de ${nombre} (${email}): ${mensaje}`);
+
+    return res.status(200).json({ 
+        ok: true, 
+        mensaje: '¡Mensaje recibido correctamente! Te responderé pronto.' 
+    });
+}
