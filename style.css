@@ -73,6 +73,32 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 main { min-height: 70vh; }
 section { padding: clamp(4rem, 9vw, 8rem) 0; }
 
+.page {
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+}
+
+.header__logo {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.header__nav {
+    width: auto;
+    margin: 0;
+    padding: 0 0 var(--space-md);
+}
+
+.header__link {
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
 /* =========================
    HEADER / NAV
    ========================= */
@@ -118,6 +144,13 @@ nav a {
 
 nav a:hover, nav a.active { color: var(--color-text); background: var(--color-bg-alt); }
 
+header .header__nav {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 .menu-toggle {
     display: none;
     width: 42px;
@@ -145,8 +178,37 @@ nav a:hover, nav a.active { color: var(--color-text); background: var(--color-bg
 }
 
 .hero-content { max-width: 800px; }
-.hero h2 { color: var(--color-text); font-size: clamp(3rem, 8vw, 7rem); }
-.hero p { max-width: 32rem; font-size: var(--font-size-lg); }
+.hero h2, .hero__title { color: var(--color-text); font-size: clamp(3rem, 8vw, 7rem); }
+.hero p, .hero__subtitle { max-width: 32rem; font-size: var(--font-size-lg); }
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+    margin-top: var(--space-lg);
+}
+
+.hero__panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    background: var(--color-bg-alt);
+    box-shadow: var(--shadow-subtle);
+}
+
+.hero__panel-title { font-size: var(--font-size-lg); font-weight: 600; }
+.hero__panel-item { display: flex; justify-content: space-between; gap: var(--space-md); color: var(--color-text-muted); font-size: var(--font-size-sm); }
+
+.section { border-top: 1px solid var(--color-border); }
+.section__header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: var(--space-lg); }
+.section__title { font-size: var(--font-size-xl); }
+.section__description { max-width: 26rem; font-size: var(--font-size-sm); }
+.card__label { margin-bottom: var(--space-sm); color: var(--color-text-muted); font-size: var(--font-size-xs); letter-spacing: 0.12em; text-transform: uppercase; }
+.card__title { margin-bottom: var(--space-sm); font-size: var(--font-size-md); }
+.card__text { font-size: var(--font-size-sm); }
 
 /* =========================
    SECCIONES Y TARJETAS
@@ -204,6 +266,9 @@ nav a:hover, nav a.active { color: var(--color-text); background: var(--color-bg
 .btn-primary { border-color: var(--color-accent); background: var(--color-accent); color: #fff; box-shadow: var(--shadow-soft); }
 .btn-secondary, .btn--ghost { background: transparent; color: var(--color-text); }
 .btn-primary:hover, .btn-secondary:hover { transform: translateY(-1px); border-color: var(--color-text); background: var(--color-text); color: #fff; }
+.btn--primary { border-color: var(--color-accent); background: var(--color-accent); color: #fff; box-shadow: var(--shadow-soft); }
+.btn--ghost { background: transparent; color: var(--color-text); }
+.btn--primary:hover, .btn--ghost:hover { transform: translateY(-1px); border-color: var(--color-text); background: var(--color-text); color: #fff; }
 
 .contacto-form, .form { display: flex; flex-direction: column; gap: var(--space-md); width: min(100%, 680px); margin: 2rem auto 0; }
 .form-group { margin-bottom: var(--space-sm); }
@@ -232,10 +297,12 @@ footer p { margin: 0 auto; color: rgba(255, 255, 255, 0.7); font-size: var(--fon
     .header-content { min-height: 68px; }
     .menu-toggle { display: block; }
     nav { display: none; align-items: flex-start; flex-direction: column; gap: var(--space-sm); padding: var(--space-md) 0; }
-    nav.active { display: flex; }
+    header .header__nav { display: none; width: min(100% - 2rem, 1200px); margin: 0 auto; padding: var(--space-md) 0; }
+    nav.active, header .header__nav.active { display: flex; }
     .about-grid, .mission-section, .credentials-list { grid-template-columns: 1fr; }
     section { padding: 4rem 0; }
     footer { display: block; }
+    .section__header { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
 }
 
 @media (prefers-reduced-motion: reduce) {
