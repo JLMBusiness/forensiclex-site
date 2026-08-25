@@ -60,7 +60,7 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 /* Header */
 header, .header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 0 max(1rem, calc((100vw - 1200px) / 2)) 1.5rem; background: rgba(255, 255, 255, 0.94); border-bottom: 1px solid #E3E3E6; backdrop-filter: blur(12px); }
 .header-content { display: flex; align-items: center; justify-content: space-between; min-height: 76px; }
-.header__logo, .header-content h1 { margin: 0; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+.header__logo, .header-content h1 { margin: 0; font-size: 1.25rem; font-weight: 600; letter-spacing: 0.04em; }
 .brand-link { transition: color var(--transition-fast); }
 .brand-link:hover { color: #000; }
 nav, .header__nav { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; margin: 0; padding: 0; }
