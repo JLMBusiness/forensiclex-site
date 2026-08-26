@@ -99,12 +99,13 @@ header, .header { position: sticky; top: 0; z-index: 10; display: flex; align-it
 .brand-link:hover { color: #000; }
 .animated-logo { display: inline-flex; align-items: center; gap: 0.65rem; }
 .logo-monogram { position: relative; display: inline-block; width: 2.25rem; height: 3rem; flex-shrink: 0; font-size: 2.25rem; font-weight: 800; line-height: 1; }
-.logo-letter { position: absolute; display: block; opacity: 0; transform: scale(0.6); }
+.logo-letter { position: absolute; display: block; width: 100%; height: 100%; object-fit: contain; opacity: 0; transform: scale(0.6); }
 .logo-f { top: 0; left: 0; }
 .logo-l { right: 0; bottom: 0; }
 .animated-logo.is-mounted .logo-f { animation: pop-in 0.5s ease-out 1.9s forwards; }
 .animated-logo.is-mounted .logo-l { animation: pop-in 0.5s ease-out 2.3s forwards; }
-.logo-wordmark { display: inline-block; overflow: hidden; max-width: 0; white-space: nowrap; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; }
+.logo-wordmark { display: inline-block; overflow: hidden; max-width: 0; white-space: nowrap; }
+.logo-wordmark img { display: block; width: auto; height: 2.5rem; }
 .animated-logo.is-mounted .logo-wordmark { max-width: 10rem; animation: typing-reveal 1.5s steps(11) 0.3s forwards; }
 .logo-cursor { width: 2px; height: 1.8rem; flex-shrink: 0; border-radius: 999px; background: #6b7280; opacity: 0; }
 .animated-logo.is-mounted .logo-cursor { animation: cursor-blink-fade 1.6s ease-in-out 0.3s forwards; }
