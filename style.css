@@ -64,6 +64,10 @@ body {
   margin: 0;
   padding: 0;
 }
+.logo-page { background: #fcfbf8; }
+.logo-page .page { width: 100%; margin: 0; }
+.logo-stage { display: flex; min-height: 100vh; align-items: center; justify-content: center; padding: 1.5rem; background: #fcfbf8; }
+.logo-stage .animated-logo { transform: translateY(-4vh); }
 ::selection { background: var(--color-accent-soft); }
 a { color: inherit; text-decoration: none; }
 a:hover { text-decoration: none; }
