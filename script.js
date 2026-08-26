@@ -4,6 +4,10 @@
 const menuToggle = document.getElementById('menu-toggle');
 const navbar = document.getElementById('navbar');
 
+document.querySelectorAll('.animated-logo').forEach(logo => {
+    window.setTimeout(() => logo.classList.add('is-mounted'), 100);
+});
+
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
         const isOpen = navbar.classList.toggle('active');
