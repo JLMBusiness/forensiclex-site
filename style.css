@@ -165,6 +165,24 @@ nav a:hover, nav a.active, .header__link:hover, .header__link--active { color: #
   }
 }
 
+/* EFECTO TECLEADO — Aparición letra a letra */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid rgba(31,63,51,0.4);
+  animation: typing 2s steps(30, end), blinkCursor 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  from { border-right-color: rgba(31,63,51,0.4); }
+  to { border-right-color: transparent; }
+}
+
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);

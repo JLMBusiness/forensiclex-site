@@ -40,6 +40,10 @@ const revealOnScroll = () => {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
+const typewriterItems = document.querySelectorAll('.resumen-item .typewriter');
+typewriterItems.forEach((item, index) => {
+    item.style.animationDelay = `${index * 1.2}s`;
+});
 
 // ==========================================
 // 2. API DE SALUDO (/api/saludo)
