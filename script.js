@@ -130,10 +130,15 @@ if (contactoForm) {
 
             if (respuesta.ok && resultado.ok) {
                 contactoResultado.className = 'resultado exito';
-                contactoResultado.textContent = resultado.mensaje;
+                contactoResultado.innerHTML = `<span class="contacto-tick" aria-hidden="true">&#10003;</span>${resultado.mensaje}`;
                 contactoForm.reset();
+                window.setTimeout(() => {
+                    contactoResultado.className = 'resultado';
+                    contactoResultado.textContent = '';
+                }, 10000);
             } else {
                 contactoResultado.className = 'resultado error';
+                contactoResultado.textContent = '';
                 contactoResultado.textContent = resultado.mensaje || 'Error al enviar.';
             }
         } catch (error) {
