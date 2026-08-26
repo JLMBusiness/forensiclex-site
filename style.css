@@ -158,16 +158,33 @@ nav a:hover, nav a.active, .header__link:hover, .header__link--active { color: #
   }
 }
 
-/* EFECTO TECLEADO — Aparición letra a letra */
+/* EFECTO TECLEADO — Aparición secuencial con cursor */
 .typewriter {
+  display: inline-block;
+  width: 0;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 2s steps(30, end);
+  border-right: none;
+}
+
+.typewriter.is-typing {
+  border-right-color: #1f3f33;
+  animation: typing 1.8s steps(30, end) forwards, blinkCursor 0.7s step-end infinite;
+}
+
+.typewriter.is-complete {
+  width: var(--typewriter-width);
+  border-right: none;
 }
 
 @keyframes typing {
   from { width: 0; }
-  to { width: 100%; }
+  to { width: var(--typewriter-width); }
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-right-color: #1f3f33; }
+  50% { border-right-color: transparent; }
 }
 
 .scroll-reveal {

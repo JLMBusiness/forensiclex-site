@@ -41,9 +41,29 @@ window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
 const typewriterItems = document.querySelectorAll('.resumen-item .typewriter');
-typewriterItems.forEach((item, index) => {
-    item.style.animationDelay = `${index * 1.2}s`;
-});
+const startTypewriter = (index) => {
+    const item = typewriterItems[index];
+
+    if (!item) {
+        return;
+    }
+
+    item.style.setProperty('--typewriter-width', `${item.scrollWidth}px`);
+    item.classList.add('is-typing');
+    item.addEventListener('animationend', () => {
+        if (index === typewriterItems.length - 1) {
+            return;
+        }
+
+        item.classList.remove('is-typing');
+        item.classList.add('is-complete');
+        startTypewriter(index + 1);
+    }, { once: true });
+};
+
+if (typewriterItems.length > 0) {
+    startTypewriter(0);
+}
 
 // ==========================================
 // 2. API DE SALUDO (/api/saludo)
