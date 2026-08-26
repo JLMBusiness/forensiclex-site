@@ -110,6 +110,38 @@ nav a:hover, nav a.active, .header__link:hover, .header__link--active { color: #
   }
 }
 
+/* CUADRO RESUMEN — Integrado con fondo pastel + papel premium */
+.resumen {
+  background: transparent;
+  padding: 2rem;
+  max-width: 420px;
+  border: 2px solid #1f3f33;
+  border-radius: 10px;
+  outline: 1px solid rgba(31,63,51,0.4);
+  outline-offset: -3px;
+  box-shadow: 0 0 0 1px rgba(31,63,51,0.2);
+  background-image:
+    radial-gradient(circle at 20% 40%, rgba(255,255,255,0.12) 0%, transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.10) 0%, transparent 60%);
+  background-blend-mode: overlay;
+}
+
+.resumen h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #1f3f33;
+  font-weight: 600;
+}
+
+.resumen-item {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #1f3f33;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .border-pencil {
   border: 2px solid #1f3f33;
   border-radius: 8px;
