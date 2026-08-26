@@ -1,3 +1,5 @@
+import nodemailer from 'nodemailer';
+
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({
@@ -23,31 +25,36 @@ export default async function handler(req, res) {
         });
     }
 
-    if (!process.env.RESEND_API_KEY) {
-        console.error('Falta la variable de entorno RESEND_API_KEY');
+    const requiredSettings = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS'];
+    if (requiredSettings.some(setting => !process.env[setting])) {
+        console.error('Faltan variables de entorno SMTP');
         return res.status(500).json({
             ok: false,
             mensaje: 'El servicio de correo no está configurado.'
         });
     }
 
-    const respuesta = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-            Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            from: 'ForensicLex <contacto@forensiclex.com>',
-            to: ['contacto@forensiclex.com'],
-            reply_to: email,
-            subject: `Nuevo mensaje de contacto de ${nombre}`,
-            text: `Nombre: ${nombre}\nEmail: ${email}\n\nMensaje:\n${mensaje}`
-        })
+    const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        secure: false,
+        requireTLS: true,
+        auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS
+        }
     });
 
-    if (!respuesta.ok) {
-        console.error('Error de Resend:', await respuesta.text());
+    try {
+        await transporter.sendMail({
+            from: process.env.SMTP_USER,
+            to: 'contacto@forensiclex.com',
+            replyTo: email,
+            subject: `Nuevo mensaje de contacto de ${nombre}`,
+            text: `Nombre: ${nombre}\nEmail: ${email}\n\nMensaje:\n${mensaje}`
+        });
+    } catch (error) {
+        console.error('Error SMTP:', error);
         return res.status(502).json({
             ok: false,
             mensaje: 'No se pudo enviar el mensaje. Inténtalo de nuevo.'
