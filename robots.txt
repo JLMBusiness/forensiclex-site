@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Bloqueo de carpetas internas
+Disallow: /admin/
+Disallow: /api/private/
+
+Sitemap: https://forensiclex.com/sitemap.xml
